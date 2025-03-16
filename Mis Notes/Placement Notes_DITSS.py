@@ -7,8 +7,4 @@ APTI **
 
 
 
-TO DO:
-	1. Linux
-	2. Git setup
-	3. Cyber Sec - Certifications Syllabus
 
