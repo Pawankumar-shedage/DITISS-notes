@@ -1,0 +1,87 @@
+CPT CHEAT SHEET
+
+***TO SAVE EVERY CONFIG *******
+hostname# copy [source] [start]
+
+hostname# copy running-config starting-config
+
+short-cut: hostname# copy run start
+
+************************************************
+1. Config Host
+
+TOTAL 7 Hosts can configure the router (con 0,aux 0, vty 0,1,2,3,4 )
+
+# Config lines (users[3])	--for every line: con 0,aux 0, vty 0 4 (0,1,2,3,4)
+	A(config)# line con 0 (enter)
+
+	A(config_line)#  line con 0
+	A(config_line)#  password cisco
+	A(config_line)#  login
+	
+-------------------------------------------------------------
+	
+2. Interface config
+	
+	A# config terminal (enter)
+
+	A(config)# interface g 0/0
+
+	A(config)# no shutdown  	---int g 0/0 state on
+	
+	A(config)# ip address [interface IP] [S.M]
+	
+	A# copy run start	-- save config*** 
+
+	eg:
+		A(config)# int g 0/1
+		A(config-if)#		
+		A(config-if)# ip add  172.16.10.1    255.255.255.0
+
+-------------------------------------------------------------
+3. Static Routes config at router
+	
+	A(config)# ip route [destination_network] [subnet-mask] [next-hop] [AD]			--AD: administrative distance
+
+	-- carefully configure router-interfaces-ip's for alternative paths.
+
+-------------------------------------------------------------
+3. Disable domain lookup
+
+	A(config)# no ip domain-lookup
+
+
+
+-------------------------------------------------------------
+
+#Remove routes
+	3.1 CLI:
+		A(config)# no ip route [dest] [sm] [via-ip-add(port) -network-hop]
+
+-------------------------------------------------------------
+
+# Config RIP protocol V1 at router (at every router)
+	B(config)#router rip  --> B(config-router)#		-- to enter 'config-router' mode.
+
+	--commands:
+
+	A(config)# route rip
+	A(config-router)# network 172.16.0.0  --class B 
+
+	-- Classfull values of directly connected interfaces.
+	
+ Router RIP V2 set-up commands:
+	A(config)# route rip
+	A(config-router)# network 172.16.0.0  --class B 
+	A(config-router)# version 2
+
+-------------------------------------------------------------
+
+#Configure OSPF Routing Protocol:
+
+
+-------------------------------------------------------------
+
+
+-------------------------------------------------------------
+
