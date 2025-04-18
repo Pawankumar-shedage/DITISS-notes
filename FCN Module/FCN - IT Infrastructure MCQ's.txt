@@ -1,0 +1,73 @@
+FCN - IT Infrastructure MCQ's | C1-89744-Pawankumar Shedage
+
+
+Question 1
+Topic: Network Security Best Practices
+
+Question Text: Why is network segmentation important for infrastructure security?
+
+A. It speeds up the internet connection
+B. It allows IT teams to install new devices faster
+C. It isolates critical systems from less secure areas, reducing attack impact
+D. It increases CPU efficiency
+
+ANSWER: C
+
+Explanation: Network segmentation helps contain cyber threats by dividing the network into separate zones, reducing the impact of a security breach. [Self-generated]
+
+-------------------------------------------------------------------------------
+Question 2
+Topic: Endpoint Security
+
+Question Text: Which of the following is NOT a common endpoint security measure?
+
+A. Antivirus software
+B. Patch management
+C. Biometric login
+D. Overclocking a processor
+
+ANSWER: D
+
+Explanation: Antivirus software, patch management, and biometric logins are security measures, while overclocking a processor is unrelated to security. [Self-generated]
+-------------------------------------------------------------------------------
+Question 3
+Topic: Network Security
+
+Question Text: Which of the following devices is commonly used to filter and control network traffic?
+
+A. Firewall
+B. Keyboard
+C. Hard Drive
+D. Monitor
+
+ANSWER: A
+
+Explanation: A firewall monitors and filters network traffic based on security rules to prevent unauthorized access. [Self-generated]
+-------------------------------------------------------------------------------
+Question 4
+Topic: Compliance & Security Standards
+
+Question Text: Which of the following is a globally recognized standard for information security management?
+
+A. ISO 27001
+B. PCI DSS
+C. GDPR
+D. NIST
+
+ANSWER: A
+
+Explanation: ISO 27001 is an internationally recognized standard for establishing, implementing, and maintaining an information security management system (ISMS). [Self-generated]
+-------------------------------------------------------------------------------
+Question 5
+Topic: Insider Threats
+
+Question Text: What is the best way to mitigate insider threats in an organization?
+
+A. Hire only senior employees
+B. Implement strict access control policies
+C. Block all external network connections
+D. Avoid using encryption
+
+ANSWER: B
+
+Explanation: Strict access controls ensure that employees only have access to the resources they need, reducing the risk of insider threats. [Self-generated]

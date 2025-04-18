@@ -1,0 +1,2 @@
+if $? = 0 host alive
+if $? = 1 (other than 0) - host is down

@@ -1,0 +1,94 @@
+Sun Mar 30 14:52:42 2025: Starting Cisco Packet Tracer 7.3.1.0362
+Sun Mar 30 14:52:43 2025: e:\cygdrive\e\eng-jenkins\workspace\team_ca-csr-sm-le-sgme\m_sgme_pt731_win64\engine\ipc\ccep.cpp(349):WARN  - Forced an exapp to be MANDATORY at run-time.
+Sun Mar 30 14:52:43 2025: e:\cygdrive\e\eng-jenkins\workspace\team_ca-csr-sm-le-sgme\m_sgme_pt731_win64\engine\ipc\ccep.cpp(349):WARN  - Forced an exapp to be MANDATORY at run-time.
+Sun Mar 30 14:52:45 2025: Script Module starting: 
+Sun Mar 30 14:52:46 2025: e:\cygdrive\e\eng-jenkins\workspace\team_ca-csr-sm-le-sgme\m_sgme_pt731_win64\engine\util\analyticstracker.cpp(243):WARN  - error:3,url:http://www.google-analytics.com/collect,data:ev=0&ec=app&ea=track&el=init&aid=com.netacad.cisco.PacketTracer&t=event&v=1&tid=UA-56074537-2&cid=c4c79a60-65bc-488b-a4c4-101eeb4d0ba6&aiid=c4c79a60-65bc-488b-a4c4-101eeb4d0ba6&an=Cisco%20Packet%20Tracer&av=7.3.1.0362&cd1=os_name:windows&ds=windows&ni=1
+Sun Mar 30 14:52:46 2025: e:\cygdrive\e\eng-jenkins\workspace\team_ca-csr-sm-le-sgme\m_sgme_pt731_win64\engine\util\analyticstracker.cpp(243):WARN  - error:3,url:https://analytics01.cisco.netacad.com/Service02/analytics/v1/heartbeat7/%7Bc4c79a60-65bc-488b-a4c4-101eeb4d0ba6%7D/windows/ptdesktop/7.3.1.0362/app%5Etrack%5Einit%5E0/,data:
+Sun Mar 30 14:52:46 2025: e:\cygdrive\e\eng-jenkins\workspace\team_ca-csr-sm-le-sgme\m_sgme_pt731_win64\engine\util\analyticstracker.cpp(243):WARN  - error:3,url:https://analytics01.cisco.netacad.com/Service02/analytics/v1/heartbeat7/%7Bc4c79a60-65bc-488b-a4c4-101eeb4d0ba6%7D/windows/ptdesktop/7.3.1.0362/app%5Etrack%5Esession%5E1/,data:
+Sun Mar 30 14:52:46 2025: e:\cygdrive\e\eng-jenkins\workspace\team_ca-csr-sm-le-sgme\m_sgme_pt731_win64\engine\util\analyticstracker.cpp(243):WARN  - error:3,url:https://analytics01.cisco.netacad.com/Service02/analytics/v1/heartbeat7/%7Bc4c79a60-65bc-488b-a4c4-101eeb4d0ba6%7D/windows/ptdesktop/7.3.1.0362/app%5Etrack-screen%5Elogical-workspace%5E0/,data:
+Sun Mar 30 14:52:46 2025: e:\cygdrive\e\eng-jenkins\workspace\team_ca-csr-sm-le-sgme\m_sgme_pt731_win64\engine\util\analyticstracker.cpp(243):WARN  - error:3,url:https://analytics01.cisco.netacad.com/Service02/analytics/v1/heartbeat7/%7Bc4c79a60-65bc-488b-a4c4-101eeb4d0ba6%7D/windows/ptdesktop/7.3.1.0362/app%5Etrack-screen%5Erealtime-mode%5E0/,data:
+Sun Mar 30 14:52:46 2025: e:\cygdrive\e\eng-jenkins\workspace\team_ca-csr-sm-le-sgme\m_sgme_pt731_win64\engine\util\analyticstracker.cpp(243):WARN  - error:3,url:http://www.google-analytics.com/collect,data:ev=1&sc=start&aid=com.netacad.cisco.PacketTracer&t=event&v=1&tid=UA-56074537-2&cid=c4c79a60-65bc-488b-a4c4-101eeb4d0ba6&aiid=c4c79a60-65bc-488b-a4c4-101eeb4d0ba6&an=Cisco%20Packet%20Tracer&av=7.3.1.0362&cd1=os_name:windows&ds=windows&ni=1
+Sun Mar 30 14:52:46 2025: e:\cygdrive\e\eng-jenkins\workspace\team_ca-csr-sm-le-sgme\m_sgme_pt731_win64\engine\util\analyticstracker.cpp(243):WARN  - error:3,url:http://www.google-analytics.com/collect,data:ev=0&cd=logical-workspace&aid=com.netacad.cisco.PacketTracer&t=screenview&v=1&tid=UA-56074537-2&cid=c4c79a60-65bc-488b-a4c4-101eeb4d0ba6&aiid=c4c79a60-65bc-488b-a4c4-101eeb4d0ba6&an=Cisco%20Packet%20Tracer&av=7.3.1.0362&cd1=os_name:windows&ds=windows
+Sun Mar 30 14:52:46 2025: e:\cygdrive\e\eng-jenkins\workspace\team_ca-csr-sm-le-sgme\m_sgme_pt731_win64\engine\util\analyticstracker.cpp(243):WARN  - error:3,url:http://www.google-analytics.com/collect,data:ev=0&cd=realtime-mode&aid=com.netacad.cisco.PacketTracer&t=screenview&v=1&tid=UA-56074537-2&cid=c4c79a60-65bc-488b-a4c4-101eeb4d0ba6&aiid=c4c79a60-65bc-488b-a4c4-101eeb4d0ba6&an=Cisco%20Packet%20Tracer&av=7.3.1.0362&cd1=os_name:windows&ds=windows
+Sun Mar 30 14:52:46 2025: Script Module starting: net.netacad.cisco.ActivitySequenceEditor
+Sun Mar 30 14:52:46 2025: Script Module starting: net.netacad.cisco.ActivitySequencer
+Sun Mar 30 14:52:46 2025: Script Module starting: net.netacad.cisco.clearTerminalAgent
+Sun Mar 30 14:52:46 2025: Script Module starting: net.netacad.cisco.Marvel
+Sun Mar 30 14:52:46 2025: Script Module starting: net.netacad.cisco.PcSoftware
+Sun Mar 30 14:52:46 2025: Script Module starting: net.netacad.cisco.PTINTERNAL
+Sun Mar 30 14:52:46 2025: Script Module starting: net.netacad.cisco.resource
+Sun Mar 30 14:52:46 2025: e:\cygdrive\e\eng-jenkins\workspace\team_ca-csr-sm-le-sgme\m_sgme_pt731_win64\engine\ipc\ccep.cpp(349):WARN  - Forced an exapp to be MANDATORY at run-time.
+Sun Mar 30 14:52:46 2025: e:\cygdrive\e\eng-jenkins\workspace\team_ca-csr-sm-le-sgme\m_sgme_pt731_win64\engine\util\analyticstracker.cpp(243):WARN  - error:3,url:http://www.google-analytics.com/collect,data:ev=0&ec=app&ea=login&el=guest&aid=com.netacad.cisco.PacketTracer&t=event&v=1&tid=UA-56074537-2&cid=c4c79a60-65bc-488b-a4c4-101eeb4d0ba6&aiid=c4c79a60-65bc-488b-a4c4-101eeb4d0ba6&an=Cisco%20Packet%20Tracer&av=7.3.1.0362&cd1=os_name:windows&ds=windows&ni=1
+Sun Mar 30 14:52:46 2025: e:\cygdrive\e\eng-jenkins\workspace\team_ca-csr-sm-le-sgme\m_sgme_pt731_win64\engine\util\analyticstracker.cpp(243):WARN  - error:3,url:https://analytics01.cisco.netacad.com/Service02/analytics/v1/heartbeat7/%7Bc4c79a60-65bc-488b-a4c4-101eeb4d0ba6%7D/windows/ptdesktop/7.3.1.0362/app%5Elogin%5Eguest%5E0/,data:
+Sun Mar 30 14:53:05 2025: Opening file: C:/Users/pawan/Desktop/89744-PAWANKUMAR-FCN/FCN MOD Exam CPT.pkt
+Sun Mar 30 14:53:06 2025: Changed device name:  to A
+Sun Mar 30 14:53:06 2025: Changed device name:  to Power Distribution Device0
+Sun Mar 30 14:53:06 2025: Changed device name:  to PC0
+Sun Mar 30 14:53:06 2025: Changed device name:  to Switch0
+Sun Mar 30 14:53:06 2025: Changed device name:  to B
+Sun Mar 30 14:53:06 2025: Changed device name:  to PC0(1)
+Sun Mar 30 14:53:06 2025: Changed device name:  to Switch0(1)
+Sun Mar 30 14:53:06 2025: Changed device name:  to Router0(2)
+Sun Mar 30 14:53:06 2025: Changed device name:  to PC0(2)
+Sun Mar 30 14:53:06 2025: Changed device name:  to Switch0(2)
+Sun Mar 30 14:53:06 2025: Changed device name:  to PC0(2)(1)
+Sun Mar 30 14:53:06 2025: Changed device name:  to Router0(2)(1)
+Sun Mar 30 14:53:06 2025: Changed device name:  to Switch0(2)(1)
+Sun Mar 30 14:53:06 2025: Changed device name:  to Router1
+Sun Mar 30 14:53:06 2025: Changed device name:  to Switch1
+Sun Mar 30 14:53:06 2025: Changed device name:  to PC1
+Sun Mar 30 14:53:07 2025: Changed device name:  to PC2
+Sun Mar 30 14:53:07 2025: Changed device name:  to Router1(1)
+Sun Mar 30 14:53:07 2025: Changed device name:  to PC3
+Sun Mar 30 14:53:07 2025: Changed device name:  to Switch2
+Sun Mar 30 14:53:07 2025: Changed device name:  to Router2
+Sun Mar 30 14:53:07 2025: Changed device name:  to Router3
+Sun Mar 30 14:53:07 2025: Changed device name:  to Switch3
+Sun Mar 30 14:53:07 2025: Changed device name:  to Power Distribution Device1
+Sun Mar 30 14:53:07 2025: Changed device name:  to Switch4
+Sun Mar 30 14:53:07 2025: Changed device name:  to PC4
+Sun Mar 30 14:53:07 2025: Changed device name:  to PC5
+Sun Mar 30 14:53:07 2025: Changed device name:  to PC6
+Sun Mar 30 14:53:07 2025: Changed device name:  to PC7
+Sun Mar 30 14:53:07 2025: Script Module stopping: File
+Sun Mar 30 14:53:07 2025: Script Module starting: File
+Sun Mar 30 14:53:07 2025: File opened successfully.
+Sun Mar 30 14:53:07 2025: Saving options...
+Sun Mar 30 14:53:07 2025: Options saved.
+Sun Mar 30 14:53:07 2025: e:\cygdrive\e\eng-jenkins\workspace\team_ca-csr-sm-le-sgme\m_sgme_pt731_win64\engine\util\analyticstracker.cpp(243):WARN  - error:3,url:http://www.google-analytics.com/collect,data:ev=0&cd=realtime-mode&aid=com.netacad.cisco.PacketTracer&t=screenview&v=1&tid=UA-56074537-2&cid=c4c79a60-65bc-488b-a4c4-101eeb4d0ba6&aiid=c4c79a60-65bc-488b-a4c4-101eeb4d0ba6&an=Cisco%20Packet%20Tracer&av=7.3.1.0362&cd1=os_name:windows&ds=windows
+Sun Mar 30 14:53:07 2025: e:\cygdrive\e\eng-jenkins\workspace\team_ca-csr-sm-le-sgme\m_sgme_pt731_win64\engine\util\analyticstracker.cpp(243):WARN  - error:3,url:https://analytics01.cisco.netacad.com/Service02/analytics/v1/heartbeat7/%7Bc4c79a60-65bc-488b-a4c4-101eeb4d0ba6%7D/windows/ptdesktop/7.3.1.0362/app%5Etrack-screen%5Erealtime-mode%5E0/,data:
+Sun Mar 30 14:53:07 2025: e:\cygdrive\e\eng-jenkins\workspace\team_ca-csr-sm-le-sgme\m_sgme_pt731_win64\engine\util\analyticstracker.cpp(243):WARN  - error:3,url:https://analytics01.cisco.netacad.com/Service02/analytics/v1/heartbeat7/%7Bc4c79a60-65bc-488b-a4c4-101eeb4d0ba6%7D/windows/ptdesktop/7.3.1.0362/app%5Etrack-screen%5Elogical-workspace%5E0/,data:
+Sun Mar 30 14:53:07 2025: e:\cygdrive\e\eng-jenkins\workspace\team_ca-csr-sm-le-sgme\m_sgme_pt731_win64\engine\util\analyticstracker.cpp(243):WARN  - error:3,url:http://www.google-analytics.com/collect,data:ev=0&cd=logical-workspace&aid=com.netacad.cisco.PacketTracer&t=screenview&v=1&tid=UA-56074537-2&cid=c4c79a60-65bc-488b-a4c4-101eeb4d0ba6&aiid=c4c79a60-65bc-488b-a4c4-101eeb4d0ba6&an=Cisco%20Packet%20Tracer&av=7.3.1.0362&cd1=os_name:windows&ds=windows
+Sun Mar 30 14:54:08 2025: Saving options...
+Sun Mar 30 14:54:08 2025: Options saved.
+Sun Mar 30 14:55:08 2025: Saving to file: C:/Users/pawan/Desktop/89744-PAWANKUMAR-FCN/FCN MOD Exam CPT.pkt
+Sun Mar 30 14:55:08 2025: Saving options...
+Sun Mar 30 14:55:08 2025: Options saved.
+Sun Mar 30 14:55:08 2025: File saved successfully.
+Sun Mar 30 14:55:10 2025: Saving to file: C:/Users/pawan/Desktop/89744-PAWANKUMAR-FCN/FCN MOD Exam CPT.pkt
+Sun Mar 30 14:55:10 2025: Saving options...
+Sun Mar 30 14:55:10 2025: Options saved.
+Sun Mar 30 14:55:10 2025: File saved successfully.
+Sun Mar 30 14:55:24 2025: Router3: B> en
+Sun Mar 30 14:55:32 2025: Router3: B# copy runs start
+Sun Mar 30 14:55:37 2025: Router3: B# copy run start
+Sun Mar 30 14:55:42 2025: Router3: B# show run 
+Sun Mar 30 14:56:18 2025: Saving to file: C:/Users/pawan/Desktop/89744-PAWANKUMAR-FCN/FCN MOD Exam CPT.pkt
+Sun Mar 30 14:56:18 2025: Saving options...
+Sun Mar 30 14:56:18 2025: Options saved.
+Sun Mar 30 14:56:18 2025: File saved successfully.
+Sun Mar 30 14:56:18 2025: e:\cygdrive\e\eng-jenkins\workspace\team_ca-csr-sm-le-sgme\m_sgme_pt731_win64\engine\util\analyticstracker.cpp(243):WARN  - error:3,url:https://analytics01.cisco.netacad.com/Service02/analytics/v1/heartbeat7/%7Bc4c79a60-65bc-488b-a4c4-101eeb4d0ba6%7D/windows/ptdesktop/7.3.1.0362/app%5Etrack%5Esession%5E0/,data:
+Sun Mar 30 14:56:18 2025: e:\cygdrive\e\eng-jenkins\workspace\team_ca-csr-sm-le-sgme\m_sgme_pt731_win64\engine\util\analyticstracker.cpp(243):WARN  - error:3,url:http://www.google-analytics.com/collect,data:ev=0&sc=end&utc=app&utv=track&utl=session&utt=216179&aid=com.netacad.cisco.PacketTracer&t=timing&v=1&tid=UA-56074537-2&cid=c4c79a60-65bc-488b-a4c4-101eeb4d0ba6&aiid=c4c79a60-65bc-488b-a4c4-101eeb4d0ba6&an=Cisco%20Packet%20Tracer&av=7.3.1.0362&cd1=os_name:windows&ds=windows&ni=1
+Sun Mar 30 14:56:18 2025: e:\cygdrive\e\eng-jenkins\workspace\team_ca-csr-sm-le-sgme\m_sgme_pt731_win64\engine\util\analyticstracker.cpp(243):WARN  - error:3,url:http://www.google-analytics.com/collect,data:ev=213&sc=end&aid=com.netacad.cisco.PacketTracer&t=event&v=1&tid=UA-56074537-2&cid=c4c79a60-65bc-488b-a4c4-101eeb4d0ba6&aiid=c4c79a60-65bc-488b-a4c4-101eeb4d0ba6&an=Cisco%20Packet%20Tracer&av=7.3.1.0362&cd1=os_name:windows&ds=windows&ni=1
+Sun Mar 30 14:56:18 2025: e:\cygdrive\e\eng-jenkins\workspace\team_ca-csr-sm-le-sgme\m_sgme_pt731_win64\engine\util\analyticstracker.cpp(243):WARN  - error:3,url:https://analytics01.cisco.netacad.com/Service02/analytics/v1/heartbeat7/%7Bc4c79a60-65bc-488b-a4c4-101eeb4d0ba6%7D/windows/ptdesktop/7.3.1.0362/app%5Etrack%5Esession-time%5E213/,data:
+Sun Mar 30 14:56:23 2025: Script Module stopping: File
+Sun Mar 30 14:56:24 2025: Exiting
+Sun Mar 30 14:56:24 2025: Saving options...
+Sun Mar 30 14:56:24 2025: Options saved.
+Sun Mar 30 14:56:24 2025: Script Module stopping: net.netacad.cisco.resource
+Sun Mar 30 14:56:24 2025: Script Module stopping: net.netacad.cisco.PTINTERNAL
+Sun Mar 30 14:56:24 2025: Script Module stopping: net.netacad.cisco.PcSoftware
+Sun Mar 30 14:56:24 2025: Script Module stopping: net.netacad.cisco.Marvel
+Sun Mar 30 14:56:24 2025: Script Module stopping: net.netacad.cisco.clearTerminalAgent
+Sun Mar 30 14:56:24 2025: Script Module stopping: net.netacad.cisco.ActivitySequencer
+Sun Mar 30 14:56:24 2025: Script Module stopping: net.netacad.cisco.ActivitySequenceEditor

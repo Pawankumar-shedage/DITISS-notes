@@ -1,0 +1,25 @@
+sam/jack - Pawan@fc12345
+
+
+Question 3:
+	Login as sam user. Create a folder by name demo. Sam user wants to block all other users. thus remove 	permissions of all users and just keep sam user and give full control (Perform this with sam user only). 	Logout.
+
+	Users are not able to access demo folder as sam user has locked it. 
+	Login as administrator and take ownership of the demo folder and provide jack user the modify permission.
+
+Question 4: 
+	Create a group by name dev. Create 3 users - rohan, martina and tom. Add these users to the "dev" group.
+	
+	- Create a directory buy name office. Inside office create directories - forms, code and project1.
+	- Assign permissions on these directories such that all above users are able to only read forms directory.
+	- All users are able to create/delete.rename files inside the code directory.
+	-Except tom, other users should be able to create/delete/rename files inside the project1 directory. 
+	-Tom user should not be able to access project1 directory.
+----------------------------------------------------------------
+
+Active Directory setup:		(Domain Controller recovery pass: Pawan@fc12345)
+	1. Install Active Directory Service.
+	2. Promote this server to a "domain controller"
+
+		
+	3. User password: C1 pawan: pass:- Ditiss@123

@@ -1,0 +1,126 @@
+11 April Windows administration lab
+
+dev - Pawan@fc12345
+admin1,2 - Pawan@fc12345
+
+1. Apply settings for the developers OU users such that they can login only from the hr-pc.
+   Go to 192.168.0.51/ditiss/software. Save the softwares -python,putty,firefox.
+   Inside DC install VMware TOols. Enable the shared folder to get msi files inside the DCServer VM.
+
+   Create a group policy object for developers and publish python and firefox app to the developers.
+   Create a group policy object for itdept users and publish the putty app.
+
+2. Modify the GPO of the itdept so as to install firefox on the admin-PC. Make sure admin-pc is shifted to itdept OU. Restart admin-pc.
+
+	Modify the developers OU GPO to apply following restrictions to the user.(dev 1,dev 2)
+	1. Block access to control panel.
+	2. Block access to command prompt.
+	3. Keep desktop clean. Dont't allow to save settings.
+	4. Block run menu.
+	5. Block all removable storage.
+
+3. Create an OU by name, Students. Create 2 Students by name S1 and S2 inside this OU. Then create a policy for this OU such that python will automatically install when any student logs in. The Firefox and putty application will be published.
+
+--> Also apply restriction to the students such that they can not open command prompt, control Panel, Run Menu. keep Desktop Clean. Also From computer configuration provides students to change time and time zone on Admin-pc. 
+--> Also display logon message on admin-pc "Welcome to Sunbeam Institute". with heading as welcome. 
+--> Shift admin-pc to the students OU
+-----Restart admin-pc
+
+14 April
+1. Log on as administrator on admin-pc. Remove it from the domain and add it to workgroup.
+
+   -After restart Install ADDS and add it as ADC in the sunbeam lab.
+   -Check the DNS server after restart on both the servers.
+   -Also open dsa.msc on both the servers and check if the data is same.
+   -On mainds server create a user in itdept OU by name admin3.Check if the user is shown on the admin-pc domain controller.
+
+2. On the main domain controller create a new zone by name demo.lab. This is not an active directory integrated zone. Add following records inside this zone.
+	www 	A	192.168.10.50
+	ftp	A 	192.168.10.51
+	mailsrv A	192.168.10.52
+	mail 	mx 	mailsrv.demo.lab
+	erp	A 	192.168.10.53
+	sap 	CNAME	erp.demo.lab
+
+- Check with nslookup that your are getting proper IP address for www.demo.lab ftp.demo.lab sap.demo.lab and mailsrv.demo.lab
+- Create a secondary zone for this demo.lab zone on admin-pc.
+
+
+3.--> on the admin-pc controller create a new zone by name infotech.lab . This is not an active directory integrated zone. Add the following records inside this zone.
+
+www A 192.168.50.2
+MySQL A 192.168.50.3
+webapp A 12.18.50.4
+
+--> check with nslookup that you are getting proper ip address for www.infotech.lab MySQL.infotech.lab, webapp.infotech.lab
+
+--> create a secondary zone for this infotech.lab zone on main domain controller(dcserver)
+
+4.--> create a reverse lookup zone for your network on the dcserver. 
+	Add a ptr record for 192.168.20.1 such that in the nslookup it will display as ns.sunbeam.lab. 
+	create a secondary zone for this.
+
+
+
+---- Web server IIS
+1. Install Web server IIS on admin-pc.
+Create index.html in inetpub/wwwroot directory. Display message "Welcome to Contoso Web Hosting Services!!!".
+This website should be accessed by name www.contos.lab.
+
+2. Create a directory by name web1 inside C:\inetpub.
+Create an index.html inside web1 directory.
+Display message "Welcome to web1".
+Create another directory by name web2 inside inetpub.
+Add index.html inside web2.
+Display message "This website is hosted web1 directory and runs on port 8000.
+Create 2nd website which maps directory web2 and runs on port 9100.
+Try in browser http://localhost:9100 and http://localhost:8000
+
+
+--FSRM - File Server Resource Management
+
+1.Install FSRM on the DCServer. Create and share following folders.
+students, assignments, faculty.
+Provide following quota:
+	students 10 MB Hard Limit.
+	assignment 5 GB hard limit
+	faculty 10 GB limit
+Access students folder from other machine. Map a drive. Try to copy files more than 10 MB.
+
+
+2. FSRM 2
+	Configure file screening such that in:
+	In students folder block .jgp,.png,.bmp,.mp4...
+	In assignment folder block all file types except office files.
+	In faculty folder block only .exe and .msi files
+
+3. FSRM 3
+--> Create a folder by name demo. Share the folder.
+    Go to File Screening. Go to file groups. Create a new group by name demo-files. In this in include section add *.bmp and *.jpg. In the exclude add .txt and .rtf . Save the group .
+
+--> Go to template. Create a new template by name demo-files-template. In this select demo-files group check box 
+
+--> Now go to the demo shared folder and try to create different files by opening paint and try to save in this folder. Try Saving different files. Which files you can save in this folder?
+
+Create a group by name- blocked-file. In the includes type *.txt, edit demo files template ......select blocked-file.
+
+4.FSRM 4
+4.
+--> Add a Property by name confidential in the classification tab of the files.
+--> This property will be of type yes/no.
+
+--> Now apply a classification rule for the faculty folder such that if the file contains words like question paper. Then it should be marked as confidential "Yes".
+
+--> Create 4.txt files in the faculty folder. In 2 files add word question paper. Then run the classification wizard. Check if these 2 files confidential value is changed to "yes".
+
+
+----NLB load BALANCING
+
+--> Go to Hr-pc install Network Load Balancing Features.
+--> Go to admin-pc and install  Network Load Balancing Features.
+--> On Admin-PC open network Load Balancing Manager and create a new cluster First Add 192.168.20.101 (Admin-PC) to the cluster. Assign 192.168.20.100 as the cluster ip. Keep cluster in Multicast Mode. 
+--> Once admin-pc is converged then add hr-pc.
+
+--> Check from dcserver. Open Browaser. Type 192.168.20.100 Check if website opens. Which server page is opening?
+
+--> Go to Admin-PC. In Network Load Balancer manager drainstop the server which page is opening. Then again access website and check
