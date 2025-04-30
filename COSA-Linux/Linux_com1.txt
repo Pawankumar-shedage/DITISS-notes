@@ -1,0 +1,85 @@
+----------LINUX COMMANDS ---------------------------------
+
+ systemctl list-units --type=service | grep squid.service	:shows active running services
+ cd -	: go to previous working directory
+
+acl blocked_words url_regex -i "/etc/squid/blocked_words.txt"
+
+blocked_words.txt:
+.*ipl*.
+.*iplt20*.
+
+---
+**Imp: mounting,fstab entry info:
+fstab syntax:
+<file_system>    <mount_point>    <type>    <options>    <dump>    <pass>
+
+findmnt --verify  --verbose  :*checks whether the fstab entries are right!!
+
+eg: samba eg
+//192.168.80.128/wind-data      /win1           cifs    username=administrator,password=Pawan@92840858,_netdev,nofail   0 0
+
+_netdev → means "this mount depends on the network".
+
+nofail → means "if it fails, don't stop booting".
+
+-------------------------------------------
+
+
+LINUX Assignments LAB Exam questions:
+
+1.fdisk partion
+
+fdisk /dev/sdb
+n → p → 1 → Enter → +15G → Enter
+w
+
+format the partitions:
+mkfs.ext4 /dev/sda1
+mkfs.ext3 /dev/sda2
+..
+
+--then mount them.
+mount -t auto /dev/sda1	/faculty
+mount -t auto /dev/sda1	/faculty
+
+--check if mounted cd /faculty -> lost+found or lsblk,findmnt
+-- add vi /etc/fstab entry
+/dev/sda1	/faculty	auto	defaults	0 0
+/dev/sda2	/students	auto	defaults	0 0 
+
+!!Check fstab entries first
+findmnt --verify --verboes
+
+if Successful then reboot!
+init 6
+
+----------------------------------------------------
+
+
+exam 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,198 @@
+IDS , IPS
+
+IDS: (Intrusion Detection System)
+	Intrusion : Unauthorized access.
+	IDS	: Any system detecting unauthorized access (on port)
+
+tcpdump	: first Intrusion Detection System, packet capturing cli-based utility
+
+$ sudo tcpdump -D	:shows interfaces supported by tcpdump
+$ sudo tcdump -i ens133 :uses specific interface to capture packet traffic.
+			:by default tcpdump uses 1.interface listed (show list - tcpdump -D)
+
+#packet filtering commands 
+$ sudo tcpdump udp , $sudo tcpdump icmp
+
+$sudo tcpdump -c 2 	:capture only 2 packets
+
+#**numeric format, no-name (-n)  -> ssh - 22  
+	(computer has to work more, using numeric format instead of name resolution of ssh to 22)
+	#this is scenario for every packet sent-received!!
+$sudo tcpdump -c 2 -n
+
+#save packets info into file
+(read,write in tcpdump)
+
+$sudo tcpdump -i ens133 -c 2 -w hello.tinku	:write into file
+$sudo tcpdump -r hello.tinku		:read file
+
+
+**Traffic Direction:
+$tcpdump host 192.168.80.1		: Only captures(shows) incoming/outgoing traffic on specified IP**
+
+$tcpdump dst host 192.168.68.134	:only shows packets SENT to host!
+#tcpdump src host 192.168.68.134	:only shows packets RECEIVED from host!
+
+#Traffic on ports
+tcpdump port 22
+tcpdump src port 22	:listens to outgoing traffic on port 22
+tcpdump dst port 22	:listens to traffic coming from port 22 (ssh)
+
+
+**Rule to match any TCP traffic on port 80(web) with 
+192.168.1.254 or 192.168.1.200 as destination host 
+
+$sudo tcpdump -i eth1 '((tcp) and (port 80) and ((dst host 192.168.1.254) or (dst host 192.168.1.200))'
+
+#Hexadecimal info:
+$sudo tcpdump -xx -c 2
+
+-----------SNORT  (IMP**)---------
+Snort :
+ -Open source IDS
+ -Advanced then tcpdump.
+ -Modes:
+	1.Packet Capturing.
+	2.IDS
+
+-ALWAYS run SNORT as ADMINISTRATOR!!!
+	
+
+---------
+*Windows	(Install and Configure SNORT, VMware wind VM)
+
+//1. Create a folder for exclusion.
+Virus & threat protection > Exclusions > Exclude - folder
+
+--uninstall npcap > then install winpcap. (Wireshark)
+
+C:/snort/bin/snort.exe	:path to snort executable file (Application)
+
+-Commands :
+
+C:\Snort\bin> snort -W	:lists interfaces identified by snort.
+> getmac /fo csv /v	:human readable list of interafces(/fo - format output in csv, /v - verbose
+ 
+
+#IDS only works --if there are RULES specified. (water bottle without water(signature,patches..)
+
+--get "snort-rules.tar.gz file" from server.
+--tar files - bundling of multiple files
+--*.tar.gz - 2 levels of extraction
+	   - gz -> compression
+	   - tar -> bundling
+
+*now 
+1.extract tar.gz -> .tar
+2.copy .tar file into C:\Snort
+3.open- 1. uncheck box - > 2. Overwrite mode: Overwrite wihout default -> 3. OK
+
+--(check)now files should be made under C:\Snort\rules folder with 85 items only!!
+--(check) browser-ie-rules	RULES FILE	must exist in /snort/rules
+
+--Commands to run snort in IDS mode: (C:\Snort\bin >)
+
+> snort -i (interface-number) -l c:\Snort\lof -c c:\Snort\etc\snort.conf -A console	
+
+	-- -i :interface, -l :loc of log file, -c :location of configuration file, -A  :give Alert on console.
+	-- Only intrusion detection.
+	--Errors after running command:
+		1,2,3,4,..10
+	-- Always store BACKUP OF "snort.conf" file!!
+
+--PRERREQUISITE -Exclude c/Snort/rules from anti-virus for brower-rules file!!! to avoid E5
+
+ERRORS (E): TROUBLE SHOOTING(edit snort.conf file) open text editor(VS CODE/notepad++), save snort.conf file after every EDIT
+	E1. ipvar
+		-Search & replace (ctrl H): "ipvar"
+		-ipvar occurrences 11.
+		-now replace it with "var"
+		-re-run command
+
+	E2. snort_dynamicpreprocessor		(/user/local/lib/snort_dynamicpreprocessor)
+		-linux file path ? = as windows need end file path!
+		-serach (for "snort_dynamicpreprocessor"
+		-comment 247 th line #
+		-remove 'directory' keyword from 247 line. (as windows don't point to directory)
+		-dynamicpreprocessor C:\Snort\lib\snort_dynamicpreprocessor\.....
+		-dynamicpreprocessor C:\Snort\lib\snort_dynamicpreprocessor\..... (total 11 file paths)
+		-open above path in cmd > dir /b	--> gives only file names without timestamp... information, /b : bare format)
+			-copy paste in temp file in vscode
+
+
+
+	E3.snort_dynamicengine		(/user/local/lib/snort_dynamicengine/libsf_enfine.so - No such file or directory)
+		-(so(Linux) - dll (windows)
+		-265 line
+		-same as above, comment line, replace it with windows file path
+
+	E4.snort_dynamicrules		
+		-269 line
+		-Copy folder path
+		-make new folder in lib directory with above path (C:\Snort\lib\snort_dynamicrules)
+		-then enter line in snort.conf
+		-dynamicdetection directory C:\Snort\lib\snort_dynamicrules
+
+	E5. browser-i.rule  --file gets deleted by antivirus! (if not excluded)
+
+	E6: normalize_ip4
+		-DOES noting in IDS mode
+		-comment all 5 lines.
+	
+	E7: (white_files) 
+		-go in /rules folders
+		-empty text file => name: "white_list.rules"  (extension .rules)
+	E8: (white_files)
+		-go in /rules folders
+		-empty text file => name: "black_list.rules"  (extension .rules)
+
+---now snort should run, must receive process id
+Recommended setting !!!
+	**In snort.conf - from 103 line approx to 106 line
+
+	1.Relative -> "Absolute path"!!(Windows path)
+	--CHANGE 
+		var RULE_PATH ../rules
+		var SO_RULE_PATH ../so_rules
+		var PREPROC_RULE.PATH ../preproc_rules
+	--TO
+		var RULE_PATH c:\snort\rules
+		var SO_RULE_PATH c:\snort\so_rules
+		var PREPROC_RULE.PATH c:\snort\preproc_rules
+
+	2.'/' -> '\'
+	--CHANGE	
+		whitelist $WHITE_LIST_PATH/white_list.rules, \
+		blacklist $BLACK_LIST_PATH/black_list.rules
+
+	--TO
+		whitelist $WHITE_LIST_PATH\white_list.rules, \
+		blacklist $BLACK_LIST_PATH\black_list.rules
+
+	3. Change Line 113
+	--CHANGE 
+		var WHIE_LIST_PATH ../rules
+		var BLACK_LIST_PATH ../rules
+	--TO
+		var WHITE_LIST_PATH ..\rules
+		var BLACK_LIST_PATH ..\rules		--(attention ** \)
+
+	4. CHange line 575
+	--CHANGE 
+		include $RULE_PATH/blacklist
+
+
+---NOW SAVE snort.conf file and 
+TEST the config with -T option in the command  o/p : Successfull config of snort.conf (now it will run)
+And THEN run the command
+
+--------------------------------------//snort config ------------------------------------------------
+top - check process id in linux
+ps - process id of service
+pskill	- kill process
+
+
+
+
+
+

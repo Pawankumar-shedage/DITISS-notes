@@ -1,2 +1,18 @@
+#commands, -- comment/description
+
 if $? = 0 host alive
 if $? = 1 (other than 0) - host is down
+
+hostname:
+1. hostname
+2. hostnamectl set-hostname host_name
+
+group name:
+
+list users in a group
+# lid -g {groupNameHere}
+
+check permissions of a directory:
+#ls -ld {dir_name}
+file permissions
+#ls -l {filename}

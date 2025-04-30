@@ -1,0 +1,14 @@
+22 April assignment , Repository server, Web server(httpd-Apache)
+
+To do:
+
+1. To create a repo server.
+2. Create another machine then download and configure web server (hhtpd - Apcahe server)
+
+
+Assignment Commands:
+
+
+
+---
+ss -ntl : shows port info

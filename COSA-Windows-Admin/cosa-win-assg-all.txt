@@ -1,0 +1,19 @@
+ Windows
+
+ This assignment assumes that you have already installed Windows Server, Assigned IP address , Set
+ the timezone and set the computer name.
+----------------------------
+ Q.1. Add 2 hard disks to a Windows Server and configure a Mirrored volume. Assign G: to this drive.
+ Create a folder by name demo in it. Create a file test.txt inside this demo folder. Type something in
+ this file. Then take one of the hard disk offline. Display that mirrored volume is still available.
+
+
+1.add hard disks
+2.take them online
+3.assign letter,format
+3.Healthy -add data
+4.take one hard disk offline
+5.check data
+**6.Reactivate disk -- it will synch auto.!!! 
+
+---------------------

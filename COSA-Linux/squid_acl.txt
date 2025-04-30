@@ -1,0 +1,5 @@
+----------LINUX COMMANDS ---------------------------------
+
+ systemctl list-units --type=service | grep squid.service	:shows active running services
+ cd -	: go to previous working directory
+

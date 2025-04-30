@@ -1,0 +1,26 @@
+
+COSA lab exam instructions:
+
+Repository Server config:
+
+1. attach iso 10 GB to virtual machine
+2. create a directory /mnt/cdrom
+3. mount cdrom on /mnt/cdrom
+4. cd /etc/yum repos.d
+5. mv *.repo /def_repos/
+6. vi cdrom.repo
+    [BaseOS]
+    name="cdrom BaseOS"
+    baseurl=file:///mnt/cdrom/BaseOS/
+    enabled=1
+    gpgcheck=0
+
+     [AppStream]
+    name='cdrom AppStream"
+    baseurl=file:///mnt/cdrom/AppStream/
+    enabled=1
+    gpgcheck=0
+
+save the file
+7. yum update -y
+8. install dhcp and dns

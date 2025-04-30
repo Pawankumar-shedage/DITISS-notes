@@ -1,0 +1,43 @@
+Webhosting on Linux
+
+
+-----------------------linux script----------------------------------
+#webhosting.sh
+
+vi webhosting.sh
+
+echo "Enter the Domain name of the website. (e.g. dac.lab)"
+read domain  (or domain = $1)
+
+cmd1 = 'sudo tee -a /etc/httpd/conf.d/virtualhosts.conf'
+
+#adding content in virtualhost.conf file under /etc/httpd/conf.d
+
+echo "<VirtualHost *:80>"| $cmd1
+echo "ServerName www.$domain | $cmd1
+echo "DocumentRoot /var/www/html/$domain" | $cmd1
+echo "ErroLog log/$domain-error.log" | $cmd1
+echo "CustomeLog log/$domain-access.log combined" | $cmd1
+echo "</VirtualHost>" | $cmd1
+
+#making index.html content and accessing the website
+
+sudo mkdir /var/www/html/$domain
+sudo touch /var/www/html/$domain/index.html
+
+echo "Welcome to $domain Website" | sudo tee -a /var/www/html/$domain/index.html &> /dev/null
+
+#Config hostfile under /etc/hosts, (if DNS is not enabled)
+
+echo "192.168.234.122 www.$domain" | sudo tee -a /etc/hosts
+
+#Restart the webserver-httpd service
+
+sudo systemctl restart httpd
+
+#access website via curl-1st text based browser
+curl http://www.$domain
+#wait for the output, freezes the exec.
+sleep 5 
+---------------------------------------------------------------------
+
