@@ -7,13 +7,13 @@ IDS: (Intrusion Detection System)
 tcpdump	: first Intrusion Detection System, packet capturing cli-based utility
 
 $ sudo tcpdump -D	:shows interfaces supported by tcpdump
-$ sudo tcdump -i ens133 :uses specific interface to capture packet traffic.
+$ sudo tcpdump -i ens133 :uses specific interface to capture packet traffic.
 			:by default tcpdump uses 1.interface listed (show list - tcpdump -D)
 
 #packet filtering commands 
 $ sudo tcpdump udp , $sudo tcpdump icmp
 
-$sudo tcpdump -c 2 	:capture only 2 packets
+$sudo tcpdump -c 2 	:c - capture only 2 packets
 
 #**numeric format, no-name (-n)  -> ssh - 22  
 	(computer has to work more, using numeric format instead of name resolution of ssh to 22)
@@ -47,7 +47,7 @@ $sudo tcpdump -i eth1 '((tcp) and (port 80) and ((dst host 192.168.1.254) or (ds
 #Hexadecimal info:
 $sudo tcpdump -xx -c 2
 
------------SNORT  (IMP**)---------
+-----------------------SNORT  (IMP**)---------
 Snort :
  -Open source IDS
  -Advanced then tcpdump.
@@ -68,7 +68,7 @@ Virus & threat protection > Exclusions > Exclude - folder
 
 C:/snort/bin/snort.exe	:path to snort executable file (Application)
 
--Commands :
+-Commands : RUN AS ADMINISTRATOR
 
 C:\Snort\bin> snort -W	:lists interfaces identified by snort.
 > getmac /fo csv /v	:human readable list of interafces(/fo - format output in csv, /v - verbose
@@ -85,14 +85,14 @@ C:\Snort\bin> snort -W	:lists interfaces identified by snort.
 *now 
 1.extract tar.gz -> .tar
 2.copy .tar file into C:\Snort
-3.open- 1. uncheck box - > 2. Overwrite mode: Overwrite wihout default -> 3. OK
+3.open- 1. uncheck box - > 2. Overwrite mode: Overwrite without default -> 3. OK
 
 --(check)now files should be made under C:\Snort\rules folder with 85 items only!!
 --(check) browser-ie-rules	RULES FILE	must exist in /snort/rules
 
 --Commands to run snort in IDS mode: (C:\Snort\bin >)
 
-> snort -i (interface-number) -l c:\Snort\lof -c c:\Snort\etc\snort.conf -A console	
+> snort -i (interface-number) -l c:\Snort\log -c c:\Snort\etc\snort.conf -A console	
 
 	-- -i :interface, -l :loc of log file, -c :location of configuration file, -A  :give Alert on console.
 	-- Only intrusion detection.
@@ -185,6 +185,31 @@ Recommended setting !!!
 ---NOW SAVE snort.conf file and 
 TEST the config with -T option in the command  o/p : Successfull config of snort.conf (now it will run)
 And THEN run the command
+
+-----SNORT RULES------
+
+1)rule: alert ip any any -> any any (msg: "IP Packet detected"; sid:1000001;)
+
+	-- everything is seperated by a space.
+	-- inside (key:"value";) 
+	1.alert
+	2.ip - protocol
+	3.any - source ip
+	4.any - source-port
+	->
+	5.any - dest ip
+	6.any - dest port
+	7.msg -> (if all above conditions 1-6 match, display "IP Packet detected" message)
+	8.sid - every snort rule has a "UNIQUE" snort-id, make sure no other rule has same sid! (recommended : put 1000001 5,6 zeroes after 1)
+
+-make *.rules file inside rules folder.
+2)myrules.rules
+3)open add myrules.rules into snort.conf file 
+4)under "STEP #7 : Customize rule set (appr line no.562), site specific rules"
+
+
+--exam question - write source/dest ip rule!! 
+
 
 --------------------------------------//snort config ------------------------------------------------
 top - check process id in linux
