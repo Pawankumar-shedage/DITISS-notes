@@ -1,0 +1,10 @@
+   88  clear
+   89  sudo apt-get install swaks
+   90  clear
+   91  sudo swaks --to usertwo@shuharilabs.local --from userone@shuharilabs.local --auth-auth-user=userone --auth-password=toor --server=192.168.80.150
+   92  sudo swaks --to usertwo@shuharilabs.local --from userone@shuharilabs.local --auth --auth-user=userone --auth-password=toor --server=192.168.80.150
+   93  sudo swaks --to usertwo@shuharilabs.local --from userone@shuharilabs.local --auth --auth-user=userone --auth-password=toor --server=192.168.0.52
+   94  clear
+   95  sudo init 0
+   96  clear
+   97  history

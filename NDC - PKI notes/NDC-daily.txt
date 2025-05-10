@@ -1,0 +1,64 @@
+General questions :
+Ask sir about optimal MC setup for every lab!
+mouse - robot detection - cloudflare
+DMZ
+
+
+----
+Basic machine set up 
+	root,shuhari password
+	install base packages,dependencies,tools (apt-get vi,sudo,openssh-serever)
+	add user to sudoers list - make sudo user
+	change hostname
+	lab dependencies.
+
+-----
+
+---------------04 May Sunday 2025---TO DO:------------------------------
+Theory :
+Routing (Connecting two networks)
+	1 way of routing - IP forwading:
+	enable 0 to 1 in file : /proc/sys/net/ipv4/ip_forward
+
+
+	1.Squid 
+	2.Iptables xtables
+	3.Pki lab - xtables (geoip - mod)
+	4.nagios-linux monitoring .
+
+#SQUID : lab-setup-commands
+
+
+
+
+----------------------// 04 May Sunday 2025-----------------------------
+
+
+-----------05 May
+LAB 
+1.PFSense - firewall
+2.snort
+3.PKI -xca (Certificates,Digital signature)
+(evening)
+4.Iptables - fail2ban 
+5.DNS server setup
+
+
+-----------//05 May
+
+6 may:
+-VPN
+-XCA Website ssl certificate, Deb M/C apache website host and check certificate
+	full XCA certificates
+-iptables : port forwading.
+-clearos (firewall)
+
+
+
+
+
+
+
+
+
+

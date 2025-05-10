@@ -1,0 +1,118 @@
+
+Nagios server setup (3 steps: I-Install nagios core, II-Install nagios plugin, III-Install NCPA plugin
+
+set static ip, 
+
+--configure timezone
+sudo dpkg-reconfigure tzdata
+
+--get dependencies
+sudo apt-get install 
+apache2 
+apache2utils 
+autoconf 
+gcc 
+libc6 
+libgd-dev 
+make 
+php 
+python3 
+tree 
+unzip 
+wget 
+libkr5-dev 
+openssl 
+libssl-dev
+
+#I] Install nagios-core
+-Download and extract zip file
+
+tar -zxf nagios-4.5.0.tar.gz
+
+cd nagios-4.5.0
+
+-configure,make,make install with http (apache2)
+
+sudo .configure --with-httpd_conf=/etc/apache2/site-enabled
+
+sudo make all
+
+--add user nagios group and user -> www-nagios to nagios group
+sudo useradd www-data
+sudo usermod -aG nagios www-data
+
+--check sudo make   (for all make options)
+sudo make install-groups-users
+
+sudo make install
+sudo make install-daemoninit
+sudo make install-commandmode
+sudo make install-configure
+
+//making nagios.conf file for apache2 (under /etc/apache2/site-enabled)
+sudo make install-webconf
+
+--Create "nagiosadmin" user (for authentication of nagios dashboard)
+
+-enable apache rewrite and cgi(runs python3 in websites) module 
+sudo a2enmod rewrite
+sudo a2enmod cgi
+
+#Set nagiosadmin password
+
+sudo htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
+
+**Verify nagios configuration
+
+sudo /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
+
+#Restart apache2 and nagios service
+
+sudo systemctl restart nagios
+sudo systemctl restart apache2
+
+#II] Install nagios plugin.
+
+sudo apt-get install -y 
+automake autotools-dev
+bc
+build-essential 
+dc 
+gawk 
+gettext 
+libmcrypt-dev 
+libnet-snmp-perl 
+libssl-dev
+snmp 
+
+#Download and Extract nagios-plugins-2.4.tar.gz
+
+sudo tar -zxf nagios-plugins-2.4..
+
+#Complile and Install nagios PLUGINS
+
+cd nagio-plugin-2.4
+
+sudo ./configure 
+sudo make
+sudo make install
+
+#verify nagios configuration
+
+--Now goto browser and http://<server-ip>/nagios  	
+
+--dashboard should appear if not check /etc/apache2/sites-enabled  ls -l -> nagios.conf should exist, run sudo make install-webconf again and check
+
+#III] NCPA plugin Installation
+
+- sudo wget http://192.168.0.52/sw/nagios/check_ncpa.tar.gz
+- sudo tar -zxf check_ncpa.tar.gz
+- ls -l
+- sudo vi check_ncpa.py
+- #] edit check_ncpa.py file ,line 1 python -> python3
+- sudo systemctl restart ncpa
+- cd -
+- ls
+- sudo systemctl restart nagios
+
+

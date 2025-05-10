@@ -1,0 +1,26 @@
+
+
+Nagios-  email server(Swaks tool)
+
+Base setup:
+
+	-1 deb host to monitor
+	-1 nagios srv deb machine
+	-1 mail server (for lab 192.168.0.52/mail)
+-utilities:
+/usr/bin/echo -e "***** Nagios *****\n\nNotification Type: $NOTIFICATIONTYPE$\nHost: $HOSTNAME$\nState: $HOSTSTATE$\nAddress: $HOSTADDRESS$\nInfo: $HOSTOUTPUT$\n\nDate/Time: $LONGDATETIME$\n"  | /usr/bin/swaks --to $CONTACTEMAIL$ --from $USER8$ --server $USER7$ --auth LOGIN --auth-user $USER5$ --auth-password $USER6$ --h-Subject "** $NOTIFICATIONTYPE$ Host Alert: $HOSTNAME$ is $HOSTSTATE$ **" --body -
+
+------
+Outline:
+1>swaks
+2>contacts.cfg
+3>resource.cfg
+4>edit the host definition (vi   /usr/local/nagios/etc/servers/deb_12_1.cfg )
+5>commands.cfg
+
+--Commands:
+
+**(first check mail is going from one user to other )
+
+LAB setup:
+

@@ -1,0 +1,12 @@
+
+Deb lab client linux
+
+/usr/local/nagios/etc/objects/
+
+vi commands.cfg
+
+define command {
+
+    command_name        notify-host-by-email
+    command_line        /usr/bin/echo -e "*****EMAIL BY PAWAN (X1P) *****\n\nNotification Type: $NOTIFICATIONTYPE$\nHost: $HOSTNAME$\nState: $HOSTSTATE$\nAddress: $HOSTADDRESS$\nInfo: $HOSTOUTPUT$\n\nDate/Time: $LONGDATETIME$\n" | /usr/bin/swaks --to $CONTACTEMAIL$ --from $USER8$ --server $USER7$ --auth LOGIN --auth-user $USER5$ --auth-password $USER6$ --h-Subject "*3041* $NOTIFICATIONTYPE$ Host Alert: $HOSTNAME$ is $HOSTSTATE$ **" --body -
+}

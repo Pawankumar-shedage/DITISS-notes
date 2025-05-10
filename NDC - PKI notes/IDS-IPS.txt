@@ -142,7 +142,7 @@ ERRORS (E): TROUBLE SHOOTING(edit snort.conf file) open text editor(VS CODE/note
 	E7: (white_files) 
 		-go in /rules folders
 		-empty text file => name: "white_list.rules"  (extension .rules)
-	E8: (white_files)
+	E8: (black_files)
 		-go in /rules folders
 		-empty text file => name: "black_list.rules"  (extension .rules)
 
@@ -188,7 +188,7 @@ And THEN run the command
 
 -----SNORT RULES------
 
-1)rule: alert ip any any -> any any (msg: "IP Packet detected"; sid:1000001;)
+1)rule: alert ip any any -> any any (msg: "IP Packet detected"; sid:10001;)
 
 	-- everything is seperated by a space.
 	-- inside (key:"value";) 
@@ -205,7 +205,7 @@ And THEN run the command
 -make *.rules file inside rules folder.
 2)myrules.rules
 3)open add myrules.rules into snort.conf file 
-4)under "STEP #7 : Customize rule set (appr line no.562), site specific rules"
+4)under "STEP #7 : Customize rule set (appr line no.562), site specific rules" ***
 
 
 --exam question - write source/dest ip rule!! 

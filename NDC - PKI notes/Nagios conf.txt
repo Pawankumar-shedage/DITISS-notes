@@ -1,0 +1,70 @@
+Nagios lab commands
+
+1. set timezone
+
+- sudo dpkg-reconfigure tzdata
+
+2. Install apache2 packages
+
+- sudo apt-get install  apache2 apache2-utils autoconf gcc libc6 libgd-dev make php python3 tree unzip wget libkrb5-dev openssl libssl-dev
+
+3. Extract nagios-core from local server!
+
+- wget http://192.168.0.52/sw/nagios/nagios-4.5.0.tar.gz
+
+#extract in /tmp/
+
+- tar -zxf nagios-4.5.0.tar.gz
+
+1/05/2025 may to do:
+
+##### NAGIOS core config,installation (13)
+
+I.confifuration
+- sudo ./configure --with-httpd-conf=/etc/apache2/sites-enabled/
+
+II.compilation 
+- sudo make all
+
+III.Installation
+- sudo make install-groups-users
+- sudo usermod -aG nagios www-data
+- sudo make install
+- sudo make install-daemoninit  : converting nagios-source code to nagios-service
+
+
+- sudo make install-commandmode
+- sudo make install-config
+- sudo make install-webconf		:makes nafios.conf under /etc/apache2/sites-enabled
+
+# Enable modules 
+- sudo a2enmod rewrite		:url-rewritting
+- sudo a2enmod 			:cgi-common get way
+#Create nagiosadmin User account
+
+- sudo htpasswd -c /usr/local/nagios/etc/passwd/htpasswd.users nagiosadmin 	: -c : creates htpasswd.users file, --admin pass -> nagios@123
+- sudo /usr/local/nagios/bin/nagios - v /usr/local/nagios/etc/nagios.cfg	: verify ngios-core config
+- sudo systemctl restart apache2
+- sudo systemctl start nagios
+
+#Go to browser -> and type http://<server-ip>/nagios
+
+##### Nagios plugin installation (13)
+
+1.sudo apt-get install -y automake autotools-dev bc build-essential dc gawk gettext libmcrypt-dev libnet-snmp-perl libssl-dev snmp
+2.wget http://192.168.0.52/sw/nagios/nagios-plugins-2.4.8.tar.gz
+3.tar -zxf nagios-plugins-2.4.8.tar.gz
+cd nagios-plugins-2.4.8
+4.sudo ./configure
+5.sudo  make
+6.sudo make install
+
+##Verify the nagios configuration and restart the nagios service!
+
+7.sudo /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
+8.sudo systemctl restart nagios
+
+## Browser -> http://<server-ip>/nagios
+
+
+
