@@ -1,0 +1,108 @@
+Virtual Box =
+=============
+
+Internal Network
+++++++++++++++++
+
+[Only VMs will be able to communicate with each other if they are in same network]
+----------------
+Internet - No
+-----------------
+DHCP Server - No
+-----------------
+	BASE  VM1  VM2
+BASE    Y     N    N
+VM1     N     Y    Y
+VM2     N     Y    Y
+
+
+
+
+
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Host Only
+++++++++++++++++
+
+[VMs can communicate with the Host (base) as well as they can communicate with each other.]
+----------------
+Internet - No
+-----------------
+DHCP Server - Yes [Default - 192.168.56.0/24]
+-----------------
+	BASE  VM1  VM2
+BASE    Y     Y    Y
+VM1     Y     Y    Y
+VM2     Y     Y    Y
+
+
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+NAT
+++++++++++++++++
+
+[Network Address Translation. Internet will work. VMs can go outside. No one can come inside the VMs - Functioning like NAT - VMs will not be able to communicate internally]
+----------------
+Internet - Yes
+-----------------
+DHCP Server - Yes [Default IP- 10.0.2.15]
+-----------------
+	BASE  VM1  VM2
+BASE    Y     N    N
+VM1     Y     Y    N
+VM2     Y     N    Y
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+NAT Network
+++++++++++++++++
+
+[Network Address Translation with Internal Network. Internet will work. VMs can go outside. No one can come inside the VMs - Functioning like NAT - VMs will be able to communicate internally]
+----------------
+Internet - Yes
+-----------------
+DHCP Server - Yes [Default N/w - 10.0.2.0/24]
+-----------------
+	BASE  VM1  VM2
+BASE    Y     N    N
+VM1     Y     Y    Y
+VM2     Y     Y    Y
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Bridge
+++++++++++++++++
+
+[VMs are virtually in the same LAN/WLAN like your Host (base Machine)]
+----------------
+Internet - Yes
+-----------------
+DHCP Server - Yes [The one which providing IP to your base machine.]
+-----------------
+	BASE  VM1  VM2
+BASE    Y     Y    Y
+VM1     Y     Y    Y
+VM2     Y     Y    Y
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

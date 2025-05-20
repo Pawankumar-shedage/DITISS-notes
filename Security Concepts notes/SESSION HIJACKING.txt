@@ -1,0 +1,43 @@
+SESSION HIJACKING
+XSS
+
+alert - hello/welcome
+	- document.cookie
+
+Steal the Cookies/Session ID
+
+Session Hijacking ..!!
+
+	Session Hijacking - attacker steals the session token/session ID and use it to bypass the authentication
+
+With using the session ID / Token you will get the access to the user's account. Cookie / Authentication ID.
+
+Types
+Sniffing -> Capturing unencrypted network traffic to steal the session token.
+
+Side-jacking -> Exploiting weak encryption or security protocol to steal the token.
+
+XSS -> Injecting malicious scripts into web pages to steal cookies or other session data.
+
+Phishing -> Tricking users into revealing their login credentials or session tokens.
+
+Consequences
+- Unauthorized Access
+- Financial Loss
+- Data Loss
+- Reputation Damage
+- Legal Liabilities
+
+Prevention
+- Secure Session Management
+	HTTPS, Secure Cookies, Time-limit (short-lived sessions)
+
+- MFA
+	beyond username and password another layer of authentication is there. [ex. OTP]
+
+IDS/IPS
+Awareness Training
+Security Audits/ Penetration Testing
+
+
+

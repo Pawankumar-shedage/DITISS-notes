@@ -1,0 +1,16 @@
+eth_tools:
+
+Tools:
+	INFORMATION GATHERING PARAMETERS (https://www.osintframework.com/) ****
+	google dorks cheat sheet,
+	archive.org,
+	wayback machines,
+	https://namechk.com/  (for domains)
+	https://www.namecheckr.com/ (usernames)
+	https://www.exploit-db.com/
+	disposable browsers:	
+		SquareX  (Browser Detection Response) solution
+		sandbox
+
+	https://grayhatwarfare.com  (public aws s3 buckets)
+	domain 

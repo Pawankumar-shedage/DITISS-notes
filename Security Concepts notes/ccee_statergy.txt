@@ -1,0 +1,23 @@
+
+CCEE
+	25% Easy
+	50% Medium
+	25% Difficult
+
+
+### Eg questions:
+	
+-file/command to look dns records.
+-mac address bits(48),bytes(6)
+
+
+### Own practicals checklist
+
+
+1 hour lunch
+	aptitude 10 minutes
+
+
+CHatgpt for only 
+mcq's- easy,medium,hard (1500 questions set for each subject)
+summary...

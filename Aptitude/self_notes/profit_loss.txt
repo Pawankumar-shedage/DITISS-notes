@@ -1,0 +1,18 @@
+Profit and Loss Aptitude
+
+##Brave search.
+Profit and loss is a fundamental concept in mathematics used to determine the profitability of a business or transaction. It involves calculating the cost price (CP) and selling price (SP) of a product. If SP is greater than CP, a profit is made; if SP is less than CP, a loss is incurred.
+
+The formulas for calculating profit and loss are:
+
+Profit or Gain = SP - CP
+Loss = CP - SP
+Profit and loss percentages are calculated based on CP:
+
+Profit percentage = (Profit / CP) x 100
+Loss percentage = (Loss / CP) x 100
+For example, if a shopkeeper buys apples for ₹100 and sells them for ₹120, the profit is ₹20, and the profit percentage is 20%.
+
+In scenarios involving multiple transactions, such as selling two similar items at different profit and loss percentages, the overall profit or loss percentage can be calculated using specific formulas. If an item is sold at a profit of x% and another at a loss of x%, the overall loss percentage is given by [100(P - L) - 2PL] / (100 + P + 100 - L), where P is the profit percentage and L is the loss percentage.
+
+When a trader uses false weights, the profit or loss percentage can be calculated using the formula [(True weight - False weight) / False weight] x 100.

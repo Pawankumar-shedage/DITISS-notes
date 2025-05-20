@@ -1,0 +1,20 @@
+Ethical hacking -notes :
+
+1.Information gathering
+
+-google : email, number
+
+
+-Digital profile:(individual info) required for social engineering!
+	1.Name
+	2.Address
+	3.Phone,
+	4.Email...
+	5.Accounts
+	6.CV resumes (filetype: pdf, gdrive)
+-Finding vulnerabilities of a person based on above Digital Profile.
+
+-----------------------------------------------------
+SECURING MOBILE DEVICES-- BENCHMARKS!!!!
+CIS internet security Benchmarks
+	https://www.cisecurity.org/benchmark/google_android
