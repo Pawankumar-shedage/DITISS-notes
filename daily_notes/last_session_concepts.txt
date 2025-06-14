@@ -1,0 +1,6 @@
+devops lab exam
+  -git
+  -freestyle
+  -pipeline
+  -cron tab/jobs
+  
