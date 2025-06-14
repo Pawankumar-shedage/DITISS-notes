@@ -1,6 +1,3 @@
-devops lab exam
-  -git
-  -freestyle
-  -pipeline
-  -cron tab/jobs
-  
+🕒 Last session on: 2025-06-14 16:46:24
+
+Demo
